@@ -3,16 +3,18 @@ const mongoose = require("mongoose");
 const bodyPaser = require('body-parser');
 const app = express();
 if(process.env.ENV ==='Test'){
+  console.log("testing");
   const db = mongoose.connect('mongodb://localhost/CommentDBTest', {
   useUnifiedTopology: true,
   useNewUrlParser: true
-})
+});
 }
+
 else{
   const db = mongoose.connect('mongodb://localhost/CommentDB', {
   useUnifiedTopology: true,
   useNewUrlParser: true
-})
+});
 }
 
 const commentRouter = express.Router()

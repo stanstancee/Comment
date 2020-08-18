@@ -18,7 +18,13 @@ function commentsController(Comment){
             if (err) {
                 return res.send(`You have an error ${err}`);
             }
-            return res.json(foundComments)
+            const returnComments =foundComments.map((comment)=>{
+                let newComment = comment.toJSON();
+                newComment.links = {};
+                newComment.links.self = `http://${req.headers.host}/api/comment/${comment._id}`
+                return newComment;
+            });
+            return res.json(returnComments)
         })
     }
     return {post,get}

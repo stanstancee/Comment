@@ -1,7 +1,7 @@
 const should = require("should");
 const sinon = require("sinon");
 const commentsController = require('../controller/commentController');
-process.env.ENV === "Test";
+process.env.ENV = "Test";
 describe("Comment Controller Test",()=>{
     describe('post',()=>{
         it("should not allow empty comment title",()=>{

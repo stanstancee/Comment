@@ -20,8 +20,15 @@ function routes(Comment) {
         })
     });
     commentRouter.route('/comment/:commentId')
-        .get((req, res) => res.json(req.foundComment))
+        .get((req, res) =>{ 
+            const returnComment = req.foundComment.toJSON();
+            const profile_name = req.foundComment.profile_name.replace(" ","%20")
+            returnComment.links = {};
+            returnComment.links.filterByThisProfile_Name = `http://${req.headers.host}/api/comment/?profile_name=${profile_name}`
+           return  res.json(returnComment)
 
+        }
+        )
         .put((req, res) => {
             const {
                 foundComment
