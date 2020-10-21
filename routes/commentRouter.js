@@ -1,5 +1,9 @@
+
 const express = require("express");
 const controller = require("../controller/commentController");
+
+
+
 
 function routes(Comment) {
     const commentRouter = express.Router()
@@ -15,7 +19,7 @@ function routes(Comment) {
             if (foundComment) {
                 req.foundComment = foundComment;
                 return next();
-            };
+            }
             return res.sendStatus(404);
         })
     });
@@ -76,8 +80,8 @@ function routes(Comment) {
                     return res.sendStatus(204);
                 }
             });
-        })
+        });
     return commentRouter;
 }
 
-module.exports = routes
+module.exports = routes;

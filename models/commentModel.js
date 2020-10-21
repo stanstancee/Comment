@@ -8,6 +8,6 @@ const commentModel = new Schema({
   profile_name:{type:String} ,
   title: {type:String},
   content: {type:String}
-})
+});
 
 module.exports = mongoose.model("Comment",commentModel)
