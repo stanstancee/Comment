@@ -14,13 +14,8 @@ if(process.env.ENV ==='Test'){
 
 }
 else{
-  const db = mongoose.connect('mongodb://localhost/CommentDB', {
-    
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-  
-});
-const cb = mongoose.connect('mongodb://localhost/ContactDB', {
+
+const db = mongoose.connect('mongodb+srv://admin-stanley:bonjan1994@cluster0.oqzrt.mongodb.net/ContactDB?retryWrites=true&w=majority', {
     
   useUnifiedTopology: true,
   useNewUrlParser: true
