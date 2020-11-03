@@ -5,7 +5,7 @@ const {Schema} = mongoose;
 const contactModel = new Schema({
   name:{type:String} ,
   email: {type:String},
-  phone: {type:Number},
+  phone: {type:String},
   message: {type:String}
 });
 
