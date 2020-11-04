@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyPaser = require('body-parser');
+const nodemailer = require('nodemailer');
+require('dotenv').config()
 const cors = require('cors')
 
 const app = express();
@@ -41,6 +43,34 @@ app.use('/api',contactRoute);
 app.get("/", (req, res) => {
   res.send("Hi, Welcome to my API")
 })
+
+
+
+app.post("/contact",(req,res)=>{
+  const {name,email,phone,message} = req.body;
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass:process.env.PASSWORD
+    }
+  });
+  
+  const mailOptions = {
+    from:email ,
+    to:process.env.EMAIL,
+    subject: `Message from ${name , phone} `,
+   text: `${ message }`
+  };
+  
+  transporter.sendMail(mailOptions,async function(error, info){
+    if (error) {
+     await res.json(error)
+    } else {
+      await res.status(200).json(info.response);
+    }
+  });
+});
 
 const server = app.listen(port, () => {
   console.log(`App listening on port ${port}`)
