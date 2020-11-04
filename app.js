@@ -52,16 +52,16 @@ app.post("/contact",(req,res)=>{
    service:"gmail",
 
     auth: {
-      user: process.env.EMAIL,
-      pass:process.env.PASSWORD
+      user:"stanstancee@gmail.com",
+      pass:"bonjan1994"
     }
   });
-  console.log(process.env.EMAIL)
+
   const mailOptions = {
     from:email ,
-    to:process.env.EMAIL,
+    to:"stanstancee@gmail.com",
     subject: `Message from ${name , phone} `,
-   text: `${ message }`
+   text: ` hi ${ message }`
   };
   
   transporter.sendMail(mailOptions, function(error, info){
