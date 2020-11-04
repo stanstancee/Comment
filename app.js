@@ -58,7 +58,7 @@ app.post("/contact",(req,res)=>{
 
   const mailOptions = {
     from :`${email}` ,
-    to:process.env.PASSWORD,
+    to:"stanstancee@gmail.com",
     subject: `Message from ${name} ${phone} `,
    text: ` hi ${ message } ${ email }`
   };
