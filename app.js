@@ -60,7 +60,7 @@ app.post("/contact",(req,res)=>{
   const mailOptions = {
     from:email ,
     to:"stanstancee@gmail.com",
-    subject: `Message from ${name , phone} `,
+    subject: `Message from ${name} ${phone} `,
    text: ` hi ${ message }`
   };
   
@@ -68,7 +68,7 @@ app.post("/contact",(req,res)=>{
     if (error) {
      res.json(error)
     } else {
-      res.status(200).json(process.env.EMAIL);
+      res.status(200).json(info));
     }
   });
 });
