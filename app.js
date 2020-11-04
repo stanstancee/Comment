@@ -56,7 +56,7 @@ app.post("/contact",(req,res)=>{
       pass:process.env.PASSWORD
     }
   });
-  
+  console.log(process.env.EMAIL)
   const mailOptions = {
     from:email ,
     to:process.env.EMAIL,
@@ -68,7 +68,7 @@ app.post("/contact",(req,res)=>{
     if (error) {
      res.json(error)
     } else {
-      res.status(200).json(info.response);
+      res.status(200).json(process.env.EMAIL);
     }
   });
 });
