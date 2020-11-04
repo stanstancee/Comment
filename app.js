@@ -68,7 +68,7 @@ app.post("/contact",(req,res)=>{
     if (error) {
      res.json(error)
     } else {
-      res.status(200).json(info));
+      res.status(200).json(info);
     }
   });
 });
