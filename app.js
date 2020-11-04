@@ -49,7 +49,9 @@ app.get("/", (req, res) => {
 app.post("/contact",(req,res)=>{
   const {name,email,phone,message} = req.body;
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true
     auth: {
       user: process.env.EMAIL,
       pass:process.env.PASSWORD
@@ -63,11 +65,11 @@ app.post("/contact",(req,res)=>{
    text: `${ message }`
   };
   
-  transporter.sendMail(mailOptions,async function(error, info){
+  transporter.sendMail(mailOptions, function(error, info){
     if (error) {
-     await res.json(error)
+     res.json(error)
     } else {
-      await res.status(200).json(info.response);
+      res.status(200).json(info.response);
     }
   });
 });
