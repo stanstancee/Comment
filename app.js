@@ -61,7 +61,7 @@ app.post("/contact",(req,res)=>{
     from :`${email}` ,
     to:"stanstancee@gmail.com",
     subject: `Message from ${name} ${phone} `,
-   text: ` hi ${ message }`
+   text: ` hi ${ message } ${ email }`
   };
   
   transporter.sendMail(mailOptions, function(error, info){
