@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 app.post("/contact",(req,res)=>{
   const {name,email,phone,message} = req.body;
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+   service:"gmail",
 
     auth: {
       user: process.env.EMAIL,
