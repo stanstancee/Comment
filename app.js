@@ -52,14 +52,14 @@ app.post("/contact",(req,res)=>{
    service:"gmail",
 
     auth: {
-      user:"stanstancee@gmail.com",
-      pass:"bonjan1994"
+      user:process.env.EMAIL,
+      pass:process.env.PASSWORD
     }
   });
 
   const mailOptions = {
     from :`${email}` ,
-    to:"stanstancee@gmail.com",
+    to:process.env.PASSWORD,
     subject: `Message from ${name} ${phone} `,
    text: ` hi ${ message } ${ email }`
   };
