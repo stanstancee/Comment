@@ -26,7 +26,7 @@ if(!req.body.link){
 .get((req,res)=>{
  
     Project.find({},(err,foundProject)=>{
-        if(!err){
+        if(err){
             res.send(`There was an error finding your document`)
         }
         else{
