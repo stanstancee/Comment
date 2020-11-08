@@ -26,18 +26,21 @@ const db = mongoose.connect('mongodb+srv://admin-stanley:bonjan1994@cluster0.oqz
 console.log('success')
 }
 
-const commentRouter = express.Router()
+//const commentRouter = express.Router()
 
 const port = process.env.PORT || 4000;
 const Comment = require('./models/commentModel');
 const Contact = require('./models/contactModel');
+const Project = require('./models/projectModel');
 app.use(bodyPaser.urlencoded({extended:true}));
 app.use(bodyPaser.json())
 
 const commentRoute= require('./routes/commentRouter')(Comment)
 const contactRoute = require('./routes/contactRouter')(Contact)
+const projectRoute = require('./routes/projectRouter')(Project)
 app.use('/api', commentRoute);
 app.use('/api',contactRoute);
+app.use('/api',projectRoute);
 
 
 app.get("/", (req, res) => {
