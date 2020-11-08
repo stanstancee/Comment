@@ -24,13 +24,16 @@ if(!req.body.link){
 
 )
 .get((req,res)=>{
-    const project = new Project(req.body);
-    project.find({},(err,foundProject)=>{
+ 
+    Project.find({},(err,foundProject)=>{
         if(!err){
             res.send(`There was an error finding your document`)
         }
-        return res.json(foundProject)
-    })
+        else{
+           return res.json(foundProject)
+        }
+        
+    });
 });
 return projectRouter
 }
