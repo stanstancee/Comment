@@ -5,8 +5,12 @@ const { Schema } = mongoose ;
 //create new schema
 const projectModel = new Schema({
     title:{type:String},
-    link:{type:String},
-    content:{type:String}
+    image1:{type:String},
+    image2:{type:String},
+    bookmark:{type:String},
+	projectBackground:{type:String}
+
+	
 
 });
 

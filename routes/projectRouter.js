@@ -7,18 +7,18 @@ projectRouter.route('/project')
 .post(function(req,res){
 //create a new model
 const project = new Project(req.body);
-// check if link is included which is required
-if(!req.body.link){
+// check if title is included which is required
+if(!req.body.title){
     res.status(404);
-    return res.send("link is required")
+    return res.send("title is required")
 }
    project.save((err,doc)=>{
        if(err){
            return(`There was an error saving your document ${err}`)
        }
-       res.send(doc)
+       res.send(doc);
    })
-  res.status(200)
+  res.status(200);
 }
 
 
@@ -59,9 +59,11 @@ projectRouter.route('/project/:projectId')
         const {
             foundProject
         } = req;
-       foundProject.link=req.body.link
+       foundProject.image1=req.body.image1;
+	   foundProject.image2=req.body.image2;
         foundProject.title = req.body.title;
-        foundProject.content = req.body.content;
+        foundProject.bookmark = req.body.bookmark;
+		foundProject.projectBackground = req.body.projectBackground;
         req.foundProject.save((err) => {
             if (err) {
                 return res.sendStatus(500).send(err)
