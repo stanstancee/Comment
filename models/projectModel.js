@@ -8,6 +8,7 @@ const projectModel = new Schema({
     image1:{type:String},
     image2:{type:String},
     bookmark:{type:String},
+    bookmark2:{type:String},
 	projectBackground:{type:String}
 
 	
