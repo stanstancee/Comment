@@ -63,6 +63,7 @@ function projectRouter() {
             foundProject.bookmark = req.body.bookmark;
             foundProject.bookmark2 = req.body.bookmark2;
             foundProject.projectBackground = req.body.projectBackground;
+            foundProject.url = req.body.url;
             req.foundProject.save((err) => {
                 if (err) {
                     return res.sendStatus(500).send(err)
