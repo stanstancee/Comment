@@ -60,10 +60,13 @@ app.post("/contact",(req,res)=>{
   });
 
   const mailOptions = {
-    from :`${email}` ,
-    to:"stanstancee@gmail.com",
+    from :email,
+    to:"stanleyi@gmail.com",
     subject: `Message from ${name} ${phone} `,
-   text: ` hi ${ message } ${ email }`
+	text:message,
+     html:`<h3 style="color:#fff342">Message from ${name}</h3>
+	      <p>{message}</p>
+	 `
   };
   
   transporter.sendMail(mailOptions, function(error, info){
