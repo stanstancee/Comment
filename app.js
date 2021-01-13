@@ -61,11 +61,12 @@ app.post("/contact",(req,res)=>{
 
   const mailOptions = {
     from :email,
-    to:"stanleyi@gmail.com",
+    to:"ifeohas@gmail.com",
     subject: `Message from ${name} ${phone} `,
 	text:message,
      html:`<h3 style="color:#fff342">Message from ${name}</h3>
 	      <p>{message}</p>
+		  <p>${email} ${phone} </p>
 	 `
   };
   
