@@ -56,8 +56,8 @@ app.post("/contact",(req,res)=>{
    secure:false,
    port:25,
     auth: {
-      user:process.env.EMAIL,
-      pass:process.env.PASSWORD
+      user:"ifeohas@gmail.com",
+      pass:"bonjan44594612"
     },
     tls: {
       rejectUnauthorized: false
@@ -82,6 +82,7 @@ app.post("/contact",(req,res)=>{
       res.status(200).json(info);
     }
   });
+ 
 });
 
 const server = app.listen(port, () => {
