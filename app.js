@@ -54,8 +54,8 @@ app.post("/contact",(req,res)=>{
   const transporter = nodemailer.createTransport({
    service:"gmail",
     auth: {
-      user:"stanstancee@gmail.com",
-      pass:"bonjan44594612"
+      user:process.env.EMAIL,
+      pass:process.env.PASSWORD
     },
    
   });
@@ -66,7 +66,7 @@ app.post("/contact",(req,res)=>{
     subject: `Message from ${name} ${phone} `,
 	text:message,
      html:`<h3 style="color:#fff342">Message from ${name}</h3>
-	      <p>{message}</p>
+	      <p>${message}</p>
 		  <p>${email} ${phone} </p>
 	 `
   };
