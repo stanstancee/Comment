@@ -1,15 +1,20 @@
 {
-  "name": "comment",
+  "name":"My APIs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A controllable REst api, that will be used for my projects.",
   "main": "app.js",
+  "homepage": "https://intense-brushlands-67616.herokuapp.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stanstancee/Comment.git"
+  },
   "scripts": {
     "test": "mocha tests/**/*Tests.js",
     "lint": "eslint .",
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stanley Ifeoha",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
