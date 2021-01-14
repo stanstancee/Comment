@@ -53,15 +53,11 @@ app.post("/contact",(req,res)=>{
   const {name,email,phone,message} = req.body;
   const transporter = nodemailer.createTransport({
    service:"gmail",
-   secure:false,
-   port:25,
     auth: {
-      user:"ifeohas@gmail.com",
+      user:"stanstancee@gmail.com",
       pass:"bonjan44594612"
     },
-    tls: {
-      rejectUnauthorized: false
-    }
+   
   });
 
   const mailOptions = {
